@@ -13,6 +13,13 @@ spec:
             values:
             - e2e-az1
             - e2e-az2
+      preferredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: another-node-label-key
+            operator: In
+            values:
+            - another-node-label-value
   containers:
   - name: with-node-affinity
     image: gcr.io/google_containers/pause:2.0
